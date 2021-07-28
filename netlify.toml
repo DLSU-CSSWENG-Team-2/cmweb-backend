@@ -3,6 +3,6 @@
     functions = "lambda"
 
 [[redirects]]
-    from = "/api/*"
-    to = "/.netlify/functions/servers/:splat"
+    from = "/*"
+    to = "/.netlify/functions/:splat"
     status = 200
