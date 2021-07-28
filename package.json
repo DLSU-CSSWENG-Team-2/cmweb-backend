@@ -4,9 +4,8 @@
   "description": "The collection of serverless functions for the Celeste Manila e-commerce web application. Written in JAMStack (NextJS, ReactJS) with Netlify & FaunaDB.",
   "main": "index.js",
   "scripts": {
-    "start": "netlify-lambda serve functions",
-    "lambda-serve": "netlify-lambda serve functions",
-    "lambda-build": "netlify-lambda build functions"
+    "start": "netlify-lambda serve out",
+    "build": "tsc && netlify-lambda build out"
   },
   "repository": {
     "type": "git",
@@ -24,6 +23,7 @@
   },
   "homepage": "https://github.com/DLSU-CSSWENG-Team-2/cmweb-backend#readme",
   "dependencies": {
+    "@netlify/functions": "^0.7.2",
     "netlify-lambda": "^2.0.12"
   }
 }
