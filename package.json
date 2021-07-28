@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "netlify-lambda serve functions",
-    "lambda-serve": "netlify-lambda serve functions",
-    "lambda-build": "netlify-lambda build functions"
+    "build": "netlify-lambda build functions"
   },
   "repository": {
     "type": "git",
