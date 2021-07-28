@@ -24,6 +24,7 @@
   "homepage": "https://github.com/DLSU-CSSWENG-Team-2/cmweb-backend#readme",
   "dependencies": {
     "@netlify/functions": "^0.7.2",
-    "netlify-lambda": "^2.0.12"
+    "netlify-lambda": "^2.0.12",
+    "tsc": "^2.0.3"
   }
 }
