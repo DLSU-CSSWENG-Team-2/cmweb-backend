@@ -1,16 +1,26 @@
 type Product {
     name: String!
     description: String!
+    collection: Collection
     price: Float!
-    color: [String!]!
+    colors: [String!]!
     imageURIs: [String!]!
     category: String!
-    collection: String
     size: String!
     created_at: Date!
     active: Boolean
 }
 
-type Query {
-    allProducts: [Product!]!
+type Collection {
+    name: String!
+    description: String
+    created_at: Date!
+    active: Boolean
+    products: [Product!]! @relation
 }
+
+type Query {
+    allCollections: [Collection!]
+    allProducts: [Product!]
+}
+
