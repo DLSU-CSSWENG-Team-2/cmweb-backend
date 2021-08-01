@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "netlify-lambda serve out",
-    "build": "npx tsc && netlify-lambda build out"
+    "build": "npx tsc && netlify-lambda build out",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
