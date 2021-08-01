@@ -2,22 +2,16 @@
 
 <center>
 <div>
-<img src="./assets/dlsu_logo.png" style="width: 200px; height: 200px; margin: 10px;"/>
-<img src="./assets/ccs-logo.png" style="width: 200px; height: 200px; margin: 10px;"/>
-<img src="./assets/celeste_logo.png" style="width: 200px; height: 200px; margin: 10px;"/>
+<img src="./assets/dlsu_logo.png" width="200"/>
+<img src="./assets/ccs-logo.png" width="200"/>
+<img src="./assets/celeste_logo.png" width="200"/>
 </div>
 
-<div style="margin-top: 25px;">
+<div>
 <h2>Build Status</h2>
-<table>
-<tr>
-<td>
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/34b1529e-1fd9-438d-812d-741deaa0b2d5/deploy-status)](https://app.netlify.com/sites/celestemanila-api/deploys)
 
-</td>
-</tr>
-</table>
 </center>
 
 ## Glossary
