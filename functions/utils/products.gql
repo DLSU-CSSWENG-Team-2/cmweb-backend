@@ -4,9 +4,10 @@ type Product {
     collection: Collection
     price: Float!
     colors: [String!]!
-    imageURIs: [String!]!
+    mainImage: String!
+    otherImages: [String!]
     category: String!
-    size: String!
+    sizes: [String!]
     created_at: Date!
     active: Boolean
 }
