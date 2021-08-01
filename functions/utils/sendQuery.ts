@@ -1,4 +1,4 @@
-const axios = require(`axios`);
+import faunaRequest from "../config/FaunaAxiosConfig";
 require(`dotenv`).config();
 
 /**
@@ -7,22 +7,12 @@ require(`dotenv`).config();
  * @param variables Object containing variables
  */
 export = async (query: String, variables: Object) => {
-    const {data: { data, errors }} = await axios({
-        url: `https://graphql.fauna.com/graphql`,
-        method: `POST`,
-        headers: {
-            Authorization: `Bearer ${process.env.FAUNA_SECRET_KEY}`
-        },
-        data: {
-            query,
-            variables,
-        },
-    });
+    try{
+        const res = await faunaRequest.post("", {query, variables});
+        return res.data.data;
 
-    if(errors) {
-        console.error(errors);
-        throw new Error(`Something went wrong when sending the query`);
+    }catch (err){
+        console.error(err);
+        throw new Error(`Something went wrong when sending the query`);    
     }
-
-    return data;
 }
