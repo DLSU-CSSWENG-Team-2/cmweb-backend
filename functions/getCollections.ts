@@ -1,8 +1,8 @@
 import { Handler } from "@netlify/functions";
-import { getUploadURL } from "./config/BackblazeController";
+import faunaRequest from "./config/FaunaAxiosConfig";
 
 const handler: Handler = async (event, context) => {
-  await getUploadURL();
+  // Send query to FaunaDB to get collections
 
   return {
     statusCode: 200,
