@@ -25,6 +25,11 @@
   "homepage": "https://github.com/DLSU-CSSWENG-Team-2/cmweb-backend#readme",
   "dependencies": {
     "@netlify/functions": "^0.7.2",
+    "@types/axios": "^0.14.0",
+    "@types/backblaze-b2": "^1.5.1",
+    "@types/node": "^16.4.9",
+    "backblaze-b2": "^1.7.0",
+    "dotenv": "^10.0.0",
     "netlify-lambda": "^2.0.12",
     "typescript": "^4.3.5"
   },
