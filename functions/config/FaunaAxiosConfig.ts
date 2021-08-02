@@ -5,7 +5,8 @@
  */
 
 import axios from "axios";
-
+import dotenv from "dotenv";
+dotenv.config();
 /**
  * The main configuration for the FaunaDB request needs.
  */

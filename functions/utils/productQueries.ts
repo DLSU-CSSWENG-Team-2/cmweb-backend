@@ -1,5 +1,5 @@
 // For view-all-products in shop feature
-const GET_ALL_PRODUCTS: String = `
+const GET_ALL_PRODUCTS: string = `
     query{
         allProducts{
             data{
@@ -11,6 +11,4 @@ const GET_ALL_PRODUCTS: String = `
     }
 `;
 
-export {
-    GET_ALL_PRODUCTS
-}
+export { GET_ALL_PRODUCTS };
