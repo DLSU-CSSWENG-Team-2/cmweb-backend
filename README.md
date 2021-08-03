@@ -55,9 +55,18 @@ FaunaDB is the database that is being used by this serverlesss framework. It wil
    npm start
    ```
 
-## Running Unit Tests (Coming Soon)
+## Running Unit Tests with JestJS
 
-Apparently running unit tests with serverless functions in general is quite challenging. This will be updated when it is implemented into the repository.
+Check the [`__test__`](./__test__) folder for more information on testing using JestJS.
+
+To run a JestJS test, run the following command:
+
+```
+npm test
+```
+
+This will run all of the available test suites in the `__test__` folder. The folder houses a test for each API endpoint created.
+Test cases must follow the acceptance criteria as defined by the Quality Assurance officer.
 
 ## Deploying the Application
 
