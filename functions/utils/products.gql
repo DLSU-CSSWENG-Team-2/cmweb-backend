@@ -17,6 +17,7 @@ type Collection {
     description: String
     created_at: Date!
     active: Boolean
+    featured: Boolean
     products: [Product!]! @relation
 }
 
