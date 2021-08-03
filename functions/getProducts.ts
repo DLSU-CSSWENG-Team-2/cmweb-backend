@@ -7,7 +7,7 @@ require(`dotenv`).config();
 /**
  * Queries all products from FaunaDB.
  * @param event
- * @returns all currently existing products but with specific fields (i.e. name, price, mainImage).
+ * @returns all currently existing products but with specific fields (i.e. _id, name, price, mainImage).
  */
 const handler: Handler = async (event: any) => {
   // Restrict to get request

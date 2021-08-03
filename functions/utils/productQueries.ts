@@ -1,4 +1,6 @@
-// For view-all-products in shop feature
+/**
+ * For view-all-products in shop feature
+ */ 
 const GET_ALL_PRODUCTS: string = `
     query{
         allProducts{
@@ -12,4 +14,8 @@ const GET_ALL_PRODUCTS: string = `
     }
 `;
 
-export { GET_ALL_PRODUCTS };
+
+export { 
+    GET_ALL_PRODUCTS,
+
+};

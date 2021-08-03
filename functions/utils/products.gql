@@ -24,5 +24,6 @@ type Collection {
 type Query {
     allCollections: [Collection!]
     allProducts: [Product!]
+    collections(featured: Boolean): [Collection!]
 }
 
