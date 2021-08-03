@@ -4,6 +4,28 @@ const axios = require("axios");
  * For this test suite, we need to check for all the test cases for user story 2
  */
 describe("User story #2 retrieves products from FaunaDB then returns it as an HTTP response.", () => {
+  // Making a non get request should return a status 400
+  test("The endpoint must reject non GET requests.", async () => {
+    let caught = 0;
+    let response = null;
+    try {
+      response = await axios.delete("http://localhost:9000/getProducts");
+    } catch (ex) {
+      caught++;
+    }
+    try {
+      response = await axios.post("http://localhost:9000/getProducts");
+    } catch (ex) {
+      caught++;
+    }
+    try {
+      response = await axios.put("http://localhost:9000/getProducts");
+    } catch (ex) {
+      caught++;
+    }
+    expect(caught).toEqual(3);
+  });
+
   // Response Data
   let response = null;
   test("The get request works and returns a valid response.", async () => {
