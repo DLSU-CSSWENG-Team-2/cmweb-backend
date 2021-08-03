@@ -18,15 +18,20 @@
 * To be used in dashboard when showcasing certain collections.
 */
 const GET_FEATURED_COLLECTIONS: string = `
- query getFeaturedCollections($featured: Boolean){
-     collections(featured: $featured){
-         data{
-             _id
-             name
-             description
-         }
-     }
- }
+    query getFeaturedCollections($featured: Boolean){
+        collections(featured: $featured){
+            data{
+                _id
+                name
+                description
+                products(_size:1){
+                    data{
+                        mainImage
+                    }
+                }
+            }
+        }
+    }
 `
 
 export { 
