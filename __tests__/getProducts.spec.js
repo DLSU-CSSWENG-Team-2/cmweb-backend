@@ -44,6 +44,7 @@ describe("User story #2 retrieves products from FaunaDB then returns it as an HT
     response.data.forEach((product) => {
       expect(product).toEqual(
         expect.objectContaining({
+          _id: expect.any(String),
           name: expect.any(String),
           price: expect.any(Number),
           mainImage: expect.any(String),

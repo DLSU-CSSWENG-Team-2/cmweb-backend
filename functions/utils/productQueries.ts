@@ -3,6 +3,7 @@ const GET_ALL_PRODUCTS: string = `
     query{
         allProducts{
             data{
+                _id
                 name
                 price
                 mainImage
