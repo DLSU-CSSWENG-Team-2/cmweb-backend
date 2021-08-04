@@ -1,6 +1,6 @@
 const axios = require(`axios`);
 const sendQuery = require("./utils/sendQuery");
-const { GET_ALL_PRODUCTS } = require(`./utils/productQueries.js`);
+const { GET_ALL_PRODUCTS, GET_PRODUCT_PAGE } = require(`./utils/productQueries.js`);
 import { Handler } from "@netlify/functions";
 require(`dotenv`).config();
 
@@ -19,9 +19,24 @@ const handler: Handler = async (event: any) => {
       }),
     };
   }
-
+  
+  // event.queryStringParameters.<variable>
+  // requirements: cursor : String, either before or after
+  // Is there a way to pass the cursor from front-end to back-end without including it in the query for GET request?
+  
+  
   try {
-    const res = await sendQuery(GET_ALL_PRODUCTS);
+    const {cursor, sort, category, collection} = event.queryStringParameters;
+    
+    // No cursor yet, i.e. page 1
+    if(cursor === null){
+      var res = await sendQuery(GET_PRODUCT_PAGE);
+    }
+    
+    else{
+      var res = await sendQuery(GET_PRODUCT_PAGE, {cursor});
+    }
+
     const data = res.allProducts.data;
     return {
       statusCode: 200,
