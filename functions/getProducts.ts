@@ -20,11 +20,7 @@ const handler: Handler = async (event: any) => {
     };
   }
   
-  // event.queryStringParameters.<variable>
-  // requirements: cursor : String, either before or after
-  // Is there a way to pass the cursor from front-end to back-end without including it in the query for GET request?
-  
-  
+  // cursor : String, either before or after
   try {
     const {cursor, sort, category, collection} = event.queryStringParameters;
     
