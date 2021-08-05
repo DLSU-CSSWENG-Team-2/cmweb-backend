@@ -19,6 +19,7 @@ const GET_PRODUCT_PAGE: string = `
         allProducts(_size :8, _cursor: $cursor){
             data{
                 _id
+                slug
                 name
                 price
                 mainImage

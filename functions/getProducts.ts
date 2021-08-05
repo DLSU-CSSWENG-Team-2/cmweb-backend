@@ -32,11 +32,12 @@ const handler: Handler = async (event: any) => {
     else{
       var res = await sendQuery(GET_PRODUCT_PAGE, {cursor});
     }
+    
+    const productsRes = res.allProducts;
 
-    const data = res.allProducts.data;
     return {
       statusCode: 200,
-      body: JSON.stringify(data),
+      body: JSON.stringify(productsRes),
     };
   } catch (err) {
     console.error(err);
