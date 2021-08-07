@@ -1,5 +1,6 @@
 type Product {
-  name: String!
+  name: String! @unique
+  slug: String! @unique
   description: String!
   collection: Collection
   price: Float!
@@ -13,7 +14,8 @@ type Product {
 }
 
 type Collection {
-  name: String!
+  name: String! @unique
+  slug: String! @unique
   description: String
   created_at: Date!
   active: Boolean
