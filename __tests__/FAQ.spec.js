@@ -55,11 +55,6 @@ describe("User story #4 facilitates data flow with regards to Frequently Asked Q
           })
         );
       });
-
-      // expect the icon to be a url
-      expect(faq.icon).toMatch(
-        /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/
-      );
     });
   });
 });
