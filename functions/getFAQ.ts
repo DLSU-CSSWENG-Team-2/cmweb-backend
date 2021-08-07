@@ -4,6 +4,17 @@ const { GET_FAQ } = require("./utils/faqQueries");
 import { Handler } from "@netlify/functions";
 require(`dotenv`).config();
 
+interface UnprocessedFAQ {
+  _id: string;
+  title: string;
+  icon: string;
+  list: QuestionList;
+}
+
+interface QuestionList {
+  data: Array<Object>;
+}
+
 const handler: Handler = async (event: any) => {
   // Restrict to get request
   if (event.httpMethod !== "GET") {
@@ -18,9 +29,16 @@ const handler: Handler = async (event: any) => {
   try {
     const res = await sendQuery(GET_FAQ);
     const data = res.allFAQCategories.data;
+
+    const newData = data.map((faq: UnprocessedFAQ) => {
+      const newFaqType: any = faq;
+      newFaqType.list = faq.list.data;
+      return newFaqType;
+    });
+
     return {
       statusCode: 200,
-      body: JSON.stringify(data),
+      body: JSON.stringify(newData),
     };
   } catch (err) {
     console.error(err);
