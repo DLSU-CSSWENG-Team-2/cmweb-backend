@@ -30,6 +30,7 @@ type FAQ {
 }
 
 type FAQuestion {
+  FAQCategory: FAQ
   question: String!
   answer: String!
 }

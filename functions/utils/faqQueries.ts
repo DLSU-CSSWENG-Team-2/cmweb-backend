@@ -5,10 +5,24 @@ const GET_FAQ = `
                 _id
                 title
                 icon
-                list
+                list {
+                    data { 
+                        question
+                        answer
+                    }
+                }
             }
         }
     }
 `;
 
-export { GET_FAQ };
+const GET_QUESTION = `
+    query getFAQuestion($id: String) {
+        findFAQuestionByID(id: $id) {
+            question
+            answer
+        }
+    }
+`;
+
+export { GET_FAQ, GET_QUESTION };

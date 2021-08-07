@@ -1,6 +1,6 @@
 const axios = require(`axios`);
 const sendQuery = require("./utils/sendQuery");
-const { GET_FAQ } = require(`./utils/faqQueries`);
+const { GET_FAQ } = require("./utils/faqQueries");
 import { Handler } from "@netlify/functions";
 require(`dotenv`).config();
 
@@ -17,7 +17,7 @@ const handler: Handler = async (event: any) => {
 
   try {
     const res = await sendQuery(GET_FAQ);
-    const data = res.allProducts.data;
+    const data = res.allFAQCategories.data;
     return {
       statusCode: 200,
       body: JSON.stringify(data),
