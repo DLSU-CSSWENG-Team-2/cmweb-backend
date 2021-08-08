@@ -1,31 +1,44 @@
 type Product {
-    name: String! @unique
-    slug: String! @unique
-    description: String!
-    collection: Collection
-    price: Float!
-    colors: [String!]!
-    mainImage: String!
-    otherImages: [String!]
-    category: String!
-    sizes: [String!]
-    created_at: Date!
-    active: Boolean
+  name: String! @unique
+  slug: String! @unique
+  description: String!
+  collection: Collection
+  price: Float!
+  colors: [String!]!
+  mainImage: String!
+  otherImages: [String!]
+  category: String!
+  sizes: [String!]
+  created_at: Date!
+  active: Boolean
 }
 
 type Collection {
-    name: String! @unique
-    slug: String! @unique
-    description: String
-    created_at: Date!
-    active: Boolean
-    featured: Boolean
-    products: [Product!]! @relation
+  name: String! @unique
+  slug: String! @unique
+  description: String
+  created_at: Date!
+  active: Boolean
+  featured: Boolean
+  products: [Product!]! @relation
+}
+
+type FAQ {
+  title: String!
+  icon: String!
+  list: [FAQuestion!]! @relation
+}
+
+type FAQuestion {
+  FAQCategory: FAQ
+  question: String!
+  answer: String!
 }
 
 type Query {
-    allCollections: [Collection!]
-    allProducts: [Product!]
-    collections(featured: Boolean): [Collection!]
+  allCollections: [Collection!]
+  allProducts: [Product!]
+  collections(featured: Boolean): [Collection!]
+  allFAQCategories: [FAQ!]
+  allFAQuestions: [FAQuestion!]
 }
-
